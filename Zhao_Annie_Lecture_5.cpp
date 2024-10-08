@@ -18,34 +18,55 @@ int main () {
     // Start loop
     cout << "Would you like to make a transaction? y/n : ";
     cin >> again;
+    
+    if (again == 'y' || again == 'Y') {
 
-    // Loop
-    if (again = 'y' || 'Y') {
-        // Ask for input
-        cout << "How much money did you have at the start of the day? : ";
-        cin >> total;
-        cout << "What is the type of transaction? debit or credit? : ";
-        cin >> transaction;
-        cout << "How much is the transaction? : ";
-        cin >> transfAmt;
+    // Ask for input
+    cout << "How much money did you have at the start of the day? : ";
+    cin >> total;
 
-        // IF it is debit or credit
-        if (transaction == "debit" || "Debit")
-            total = (total - transfAmt);
-        else if (transaction == "credit" || "Credit")
-            total = (total + transfAmt);
+    // Loop 
+    while (again == 'y' || again == 'Y') {
+    cout << "What is the type of transaction? debit or credit? : ";
+    cin >> transaction;
+    cout << "How much is the transaction? : ";
+    cin >> transfAmt;
 
-        // Print the total after the transaction
-        cout << fixed << setprecision(2);
-        cout << "The total in your account now is : $" << total << endl;
+    // IF it is debit or credit
+    if (transaction == "debit" || transaction == "Debit")
+        total = (total - transfAmt);
+    else if (transaction == "credit" || transaction == "Credit")
+        total = (total + transfAmt);
 
-        //Ask if user would like to input another transaction
-        cout << "Do you have any other transactions to make? y/n : ";
-        cin >> again;
+    // Print the total after the transaction
+    cout << fixed << setprecision(2);
+    cout << "The total in your account now is : $" << total << endl;
+
+    //Ask if user would like to input another transaction
+    cout << "Do you have any other transactions to make? y/n : ";
+    cin >> again;
+    
+    }
+    cout << "Have a great day!";
     }
 
-    else if (again = 'n' || 'N')
+    else
         cout << "Have a great day!";
 
+    
     return 0;
 }
+// Output Message
+/*
+Would you like to make a transaction? y/n : y
+How much money did you have at the start of the day? : 300
+What is the type of transaction? debit or credit? : debit
+How much is the transaction? : 200
+The total in your account now is : $100.00
+Do you have any other transactions to make? y/n : y
+What is the type of transaction? debit or credit? : credit
+How much is the transaction? : 7000
+The total in your account now is : $7100.00
+Do you have any other transactions to make? y/n : n
+Have a great day!
+*/
